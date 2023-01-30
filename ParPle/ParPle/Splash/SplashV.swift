@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  SplashV.swift
 //  ParPle
 //
 //  Created by 김유진 on 2023/01/30.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct SplashV: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -19,8 +19,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct SplashV_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SplashV()
     }
 }
