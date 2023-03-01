@@ -8,13 +8,34 @@
 import SwiftUI
 
 struct MainV: View {
+    
+    @State var isLoading: Bool = true
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            if isLoading {
+                launchScreenV
+            }
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                isLoading.toggle()
+            })
+        }
     }
 }
 
 struct MainV_Previews: PreviewProvider {
     static var previews: some View {
         MainV()
+    }
+}
+
+extension MainV {
+    var launchScreenV: some View {
+        ZStack {
+            Color(red: 87/255, green: 87/255, blue: 87/255).ignoresSafeArea()
+            Image("ParPle_LogoImage")
+        }
     }
 }
